@@ -1,16 +1,52 @@
 import 'package:flutter/material.dart';
 
+class _FirstRow extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Expanded(
+          child: AspectRatio(
+              aspectRatio: 1 / 1,
+              child: Container(
+                color: Colors.blue,
+              )),
+        ),
+        Expanded(
+            child: AspectRatio(
+                aspectRatio: 1 / 1,
+                child: Column(children: [
+                  Expanded(child: Container(
+                    color: Colors.yellow,
+                  ),),
+                  Expanded(child: Container(
+                    color: Colors.purple,
+                  ),),
+                ]))),
+      ],
+    );
+  }
+}
+
 class ColorLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-          child: Container(
-            color: Colors.grey[300],
-            child: Text('data'),
-            height: double.infinity,
-            width: double.infinity,
-          ),
-        );
+      child: Container(
+        padding: EdgeInsets.all(25),
+        color: Colors.grey[300],
+        height: double.infinity,
+        width: double.infinity,
+        child: Column(
+          children: [
+            Container(
+              color: Colors.red,
+              height: 80,
+            ),
+            _FirstRow()
+          ],
+        ),
+      ),
+    );
   }
-
 }
