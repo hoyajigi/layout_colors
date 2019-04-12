@@ -1,32 +1,42 @@
 import 'package:flutter/material.dart';
 
+const _padding = 10.0;
+
 class _FirstRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(top: 10),
+      padding: EdgeInsets.only(top: _padding),
       child: Row(
-      children: [
-        Expanded(
-          child: AspectRatio(
-              aspectRatio: 1 / 1,
-              child: Container(
-                color: Colors.blue,
-              )),
-        ),
-        Expanded(
+        children: [
+          Expanded(
             child: AspectRatio(
                 aspectRatio: 1 / 1,
-                child: Column(children: [
-                  Expanded(child: Container(
-                    color: Colors.yellow,
-                  ),),
-                  Expanded(child: Container(
-                    color: Colors.purple,
-                  ),),
-                ]))),
-      ],
-    ),);
+                child: Container(
+                  color: Colors.blue,
+                )),
+          ),
+          Container(
+            width: _padding,
+          ),
+          Expanded(
+              child: AspectRatio(
+                  aspectRatio: 1 / 1,
+                  child: Column(children: [
+                    Expanded(
+                      child: Container(
+                        color: Colors.yellow,
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        color: Colors.purple,
+                      ),
+                    ),
+                  ]))),
+        ],
+      ),
+    );
   }
 }
 
