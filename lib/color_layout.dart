@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 class _FirstRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Container(
+      padding: EdgeInsets.only(top: 10),
+      child: Row(
       children: [
         Expanded(
           child: AspectRatio(
@@ -24,7 +26,7 @@ class _FirstRow extends StatelessWidget {
                   ),),
                 ]))),
       ],
-    );
+    ),);
   }
 }
 
